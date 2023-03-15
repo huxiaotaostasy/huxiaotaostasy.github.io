@@ -125,7 +125,7 @@
 
     <!-- Get from Google Analytics -->
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src=""></script> 
+    <script async src=""></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
@@ -138,31 +138,34 @@
 <body>
     <br>
     <center>
-        <span style="font-size:36px">A Dynamic Multi-Scale Voxel Flow Network for <br> Video Prediction</span>
-        <table align=center width=800px>
-            <table align=center width=800px>
+        <span style="font-size:36px">A Dynamic Multi-Scale Voxel Flow Network for Video Prediction</span>
+        <br>
+        <br>
+
+        <table align=center width=1000px>
+            <table align=center width=1000px>
                 <tr>
-                    <td align=center width=160px>
+                    <td align=center width=200px>
                         <center>
-                            <span style="font-size:20px"><a href="https://huxiaotaostasy.github.io" target="_blank">Xiaotao Hu</a></span>
+                            <span style="font-size:24px"><a href="https://huxiaotaostasy.github.io" target="_blank">Xiaotao Hu</a></span>
                         </center>
                     </td>
-                    <td align=center width=160px>
+                    <td align=center width=200px>
                         <center>
                             <span style="font-size:24px"><a href="https://github.com/hzwer" target="_blank">Zhewei Huang</a></span>
                         </center>
                     </td>
-                    <td align=center width=160px>
+                    <td align=center width=200px>
                         <center>
                             <span style="font-size:24px"><a href="https://github.com/P2Oileen" target="_blank">Ailin Huang</a></span>
                         </center>
                     </td>
-                    <td align=center width=160px>
+                    <td align=center width=200px>
                       <center>
                           <span style="font-size:24px"><a href="https://csjunxu.github.io/" target="_blank">Jun Xu</a></span>
                       </center>
                   </td>
-                  <td align=center width=160px>
+                  <td align=center width=200px>
                     <center>
                         <span style="font-size:24px"><a href="https://zsc.github.io/" target="_blank">Shuchang Zhou</a></span>
                     </center>
@@ -191,29 +194,20 @@
         </table>
     </center>
 
-    <!-- <center>
+    <center>
         <br>
         <table align=center width=850px>
             <tr>
                 <td width=260px>
                     <center>
                         <video controls autoplay loop muted width='800px'>
-                          <source src="./resources/teaser.mp4" type="video/mp4"/>
+                          <source src="./resources/kitti.mp4" type="video/mp4"/>
                         </video>
                     </center>
                 </td>
             </tr>
         </table>
-        <table align=center width=800px>
-            <center>
-                <tr>
-                    <td style='text-align: center'>
-                      Losses typically compare pixels to pixels or patches to patches by absolute location. Instead, what would happen if we compare patches or pixels to <i>corresponding </i> patches or pixels? We propose <b>correspondence-wise</b> losses that do just this, and compare them against traditional pixel-wise and patch-wise losses.
-                    </td>
-                </tr>
-            </center>
-        </table>
-    </center> -->
+    </center>
     <br>
 
     <hr>
@@ -230,159 +224,73 @@
 
     <hr>
     <center><h1>Experiments</h1></center>
+<!--    <p>要展示的图片：</p>-->
+            <table align=center width=850px>
+            <tr>
+<!--                <td width=260px>-->
+                <center>
+                        <img src="resources/fig1.png" width="362" height="292">
 
-    <!-- <table align=center width=850px>
+
+            <img src="resources/comparison.png" width="294" height="298">
+                    </center>
+            </tr>
+        </table>
+    <table align=center>
       <tr>
         <td>
-          <p>As a way to understand correspondence-wise losses in a simple scenario, we create a toy dataset by starting with a static background and then sampling a car's horizontal position uniformally about the center of the image. In this way we can simulate <i>positional uncertainty</i>. We can then ask for networks trained under various losses, <b>what is the optimal prediction under this uncertainty?</b></p>
-        </td>
-      </tr>
-    </table> -->
-    <br>
-
-    <!-- <div style="margin: auto; width: 50%; padding-left: 40px;">
-      <img name="viz_toy" src="./resources/viz/toy/sample.png" style="margin-bottom: 20px; border: 1px solid">
-      <table border="1px solid black" style="border-collapse: collapse">
-        <tr>
-          <td class="btn_toy" height="100px" onmouseover="document.viz_toy.src='./resources/viz/toy/sample.png';[].forEach.call(document.getElementsByClassName('btn_toy'),(el)=&gt;el.style.backgroundColor='white');this.style.backgroundColor='rgb(204,255,204)';" style="cursor:pointer; text-align: center; background-color: rgb(204,255,204);" width="100px">Sample</td>
-          <td class="btn_toy" height="100px" onmouseover="document.viz_toy.src='./resources/viz/toy/mse.png';[].forEach.call(document.getElementsByClassName('btn_toy'),(el)=&gt;el.style.backgroundColor='white');this.style.backgroundColor='rgb(204,255,204)';" style="cursor:pointer; text-align: center;" width="100px">MSE</td>
-          <td class="btn_toy" height="100px" onmouseover="document.viz_toy.src='./resources/viz/toy/l1.png';[].forEach.call(document.getElementsByClassName('btn_toy'),(el)=&gt;el.style.backgroundColor='white');this.style.backgroundColor='rgb(204,255,204)';" style="cursor:pointer; text-align: center;" width="100px">L1</td>
-          <td class="btn_toy" height="100px" onmouseover="document.viz_toy.src='./resources/viz/toy/l1p.png';[].forEach.call(document.getElementsByClassName('btn_toy'),(el)=&gt;el.style.backgroundColor='white');this.style.backgroundColor='rgb(204,255,204)';" style="cursor:pointer; text-align: center;" width="100px">L1 + Perceptual</td>
-          <td class="btn_toy" height="100px" onmouseover="document.viz_toy.src='./resources/viz/toy/l1_corr.png';[].forEach.call(document.getElementsByClassName('btn_toy'),(el)=&gt;el.style.backgroundColor='white');this.style.backgroundColor='rgb(204,255,204)';" style="cursor:pointer; text-align: center;" width="100px">Corr-wise L1</td>
-        </tr>
-      </table>
-    </div>
-    <br>
-
-    <table align=center width=850px>
-      <tr>
-        <td>
-          <p>Under the L1 and the MSE loss a network produces poor images (analytically, these are the median and the mean respectively). Perhaps more surprisingly, the perceptual loss also performs badly. A correspondence-wise loss, on the other hand, is able to faithfully reproduce the car.</p>
+          <p>DMVFN outperforms previous methods in terms of image quality, parameter amount, and GFLOPs.</p>
         </td>
       </tr>
     </table>
     <br>
 
     <hr>
-    
 
     <center><h1>Ablations</h1></center>
 
     <table align=center width=850px>
-      <tr>
-        <td>
-          <p>We train video predictions using both pixel-wise and correspondence-wise losses. All else being equal, we find that training with a correspondence-wise loss produces higher quality images, especially when there is large amounts of spatial uncertainty.</p>
-          <p>Below is an example in which there is a sudden camera movement in the context frames. This causes a poor L1 prediction, which a corr-wise L1 trained network improves upon: </p>
-        </td>
-      </tr>
-    </table>
-    <br>
-
-
-
-
-
-    <div style="margin: auto; width: 50%; padding-left: 40px;">
-      <img name="viz_1" src="./resources/viz/1/gen_pix.png" style="margin-bottom: 20px; border: 1px solid">
-      <table border="1px solid black" style="border-collapse: collapse">
-        <tr>
-          <td class="btn_1" height="100px" onmouseover="document.viz_1.src='./resources/viz/1/ctx_1.png';[].forEach.call(document.getElementsByClassName('btn_1'),(el)=&gt;el.style.backgroundColor='white');this.style.backgroundColor='rgb(204,255,204)';" style="cursor:pointer; text-align: center;" width="100px">Context 1</td>
-          <td class="btn_1" height="100px" onmouseover="document.viz_1.src='./resources/viz/1/ctx_2.png';[].forEach.call(document.getElementsByClassName('btn_1'),(el)=&gt;el.style.backgroundColor='white');this.style.backgroundColor='rgb(204,255,204)';" style="cursor:pointer; text-align: center;" width="100px">Context 2</td>
-          <td class="btn_1" height="100px" onmouseover="document.viz_1.src='./resources/viz/1/ctx_3.png';[].forEach.call(document.getElementsByClassName('btn_1'),(el)=&gt;el.style.backgroundColor='white');this.style.backgroundColor='rgb(204,255,204)';" style="cursor:pointer; text-align: center;" width="100px">Context 3</td>
-          <td class="btn_1" height="100px" onmouseover="document.viz_1.src='./resources/viz/1/gen_pix.png';[].forEach.call(document.getElementsByClassName('btn_1'),(el)=&gt;el.style.backgroundColor='white');this.style.backgroundColor='rgb(204,255,204)';" style="cursor:pointer; text-align: center;background-color: rgb(204,255,204);" width="100px">Pixel-wise L1 Prediciton</td>
-          <td class="btn_1" height="100px" onmouseover="document.viz_1.src='./resources/viz/1/gen_corr.png';[].forEach.call(document.getElementsByClassName('btn_1'),(el)=&gt;el.style.backgroundColor='white');this.style.backgroundColor='rgb(204,255,204)';" style="cursor:pointer; text-align: center;" width="100px">Corr-wise L1 Prediciton</td>
-        </tr>
-      </table>
-    </div>
-    <br>
-    <br>
-
+            <tr>
+                <center>
+                <img src="resources/abl.png" width="831" height="195">
+                </center>
+            </tr>
+        </table>
 
     <table align=center width=850px>
       <tr>
         <td>
-          <p>A perceptual + L1 trained network does better, but still has artifacts. Turning the perceptual + L1 loss into a correspondence-wise loss produces a much more appealing prediction:</p>
-        </td>
+          <p>(a): Average usage rate on videos with different motion magnitudes. "Fast": tested on Vimeo-Fast. "Medium": tested on Vimeo-Medium. "Slow": tested on Vimeo-Slow. (b): Difference between "Fast"/"Slow" and "Medium" of (a). (c): Averaged usage rate on different time intervals between two input frames from Vimeo-Slow. "Int.": time interval.</p>
+          </td>
       </tr>
     </table>
-    <br>
-
-
-
-    <div style="margin: auto; width: 50%; padding-left: 40px;">
-      <img name="viz_2" src="./resources/viz/2/gen_pix.png" style="margin-bottom: 20px; border: 1px solid">
-      <table border="1px solid black" style="border-collapse: collapse">
-        <tr>
-          <td class="btn_2" height="100px" onmouseover="document.viz_2.src='./resources/viz/2/ctx_1.png';[].forEach.call(document.getElementsByClassName('btn_2'),(el)=&gt;el.style.backgroundColor='white');this.style.backgroundColor='rgb(204,255,204)';" style="cursor:pointer; text-align: center;" width="100px">Context 1</td>
-          <td class="btn_2" height="100px" onmouseover="document.viz_2.src='./resources/viz/2/ctx_2.png';[].forEach.call(document.getElementsByClassName('btn_2'),(el)=&gt;el.style.backgroundColor='white');this.style.backgroundColor='rgb(204,255,204)';" style="cursor:pointer; text-align: center;" width="100px">Context 2</td>
-          <td class="btn_2" height="100px" onmouseover="document.viz_2.src='./resources/viz/2/ctx_3.png';[].forEach.call(document.getElementsByClassName('btn_2'),(el)=&gt;el.style.backgroundColor='white');this.style.backgroundColor='rgb(204,255,204)';" style="cursor:pointer; text-align: center;" width="100px">Context 3</td>
-          <td class="btn_2" height="100px" onmouseover="document.viz_2.src='./resources/viz/2/gen_pix.png';[].forEach.call(document.getElementsByClassName('btn_2'),(el)=&gt;el.style.backgroundColor='white');this.style.backgroundColor='rgb(204,255,204)';" style="cursor:pointer; text-align: center;background-color: rgb(204,255,204);" width="100px">Pixel-wise L1 + Perceptual Prediciton</td>
-          <td class="btn_2" height="100px" onmouseover="document.viz_2.src='./resources/viz/2/gen_corr.png';[].forEach.call(document.getElementsByClassName('btn_2'),(el)=&gt;el.style.backgroundColor='white');this.style.backgroundColor='rgb(204,255,204)';" style="cursor:pointer; text-align: center;" width="100px">Corr-wise L1 + Perceptual Prediciton</td>
-        </tr>
-      </table>
-    </div>
     <br>
 
 
 
 
     <hr>
-    <table align=center width=850px>
-      <center><h1>Training Visualization</h1></center>
-      <tr>
-        <td width=128px>
-          <center>
-            <video controls autoplay loop muted>
-              <source src="./resources/training.mp4" type="video/mp4"/>
-            </video>
-          </center>
-        </td>
-      </tr>
-    </table>
-    <br>
-    <table align=center width=850px>
-      <tr>
-        <td>
-          <center>
-            <div style='width:700px;'>
-              <p>A visualization of training with a correspondence-wise loss from the toy experiment. Notice how content is generated first and then the position of objects is refined.</p>
-            </div>
-          </center>
-        </td>
-      </tr>
-    </table>
-    <br>
-
-
-
-
-
-    <hr>
-    <table align=center width=450px>
+    <table align=center width=800px>
         <center><h1>Paper and Supplementary Material</h1></center>
         <center><p>For more details and experiments check out our paper:</p></center>
         <tr>
-            <td><a target="_blank" href='https://arxiv.org/abs/2104.09498'><img class="layered-paper-big" style="height:175px" src="./resources/paper.png"/></a></td>
-            <td><span style="font-size:14pt">Geng, Hamilton, Owens.<br>
-                Comparing Correspondences.<br>
-                CVPR 2022.<br>
-                (hosted on <a target="_blank" href="https://arxiv.org/abs/2104.09498">ArXiv</a>)<br>
+            <td><a target="_blank" href=''><img class="layered-paper-big" style="height:175px" src="./resources/paper.png"/></a></td>
+            <td><span style="font-size:14pt">Xiaotao Hu, Zhewei Huang, Ailing Huang, Jun Xu, Shuchang Zhou.<br>
+                A Dynamic Multi-Scale Voxel Flow Network for Video Prediction.<br>
+                CVPR 2023.<br>
+                (hosted on <a target="_blank" href="">ArXiv</a>)<br>
+                <br>
+                <a href="./resources/bibtex.txt" target="_blank">[Bibtex]</a>
                 </span>
             </td>
+
         </tr>
     </table>
     <br>
 
-    <table align=center width=600px>
-        <tr>
-            <td><span style="font-size:14pt"><center>
-                <a href="./resources/bibtex.txt" target="_blank">[Bibtex]</a>
-            </center></td>
-        </tr>
-    </table>
     <br>
 
-    <hr> -->
+    <hr>
     <br>
 
     <table align=center width=900px>
