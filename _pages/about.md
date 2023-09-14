@@ -16,7 +16,7 @@ redirect_from:
 {% assign url = gsDataBaseUrl | append: "google-scholar-stats/gs_data_shieldsio.json" %}
 
 <span class='anchor' id='about-me'></span>
-I am a master student of [TMCC](https://mmcheng.net/cmm/), College of Computer Science, Nankai University, under the supervision of [Prof. Ming-Ming Cheng](https://scholar.google.com/citations?user=huWpVyEAAAAJ). I am also an intern in Light Illusions, supervised by [Prof. Ping Tan](https://scholar.google.com/citations?user=XhyKVFMAAAAJ&hl=en&oi=ao). I received my B.E. degrees at the [Dalian University of Technology (DLUT)](https://www.dlut.edu.cn/) in 2021. My research interest includes computer vision and computer graphics.
+I am a master student of [TMCC](https://mmcheng.net/cmm/), College of Computer Science, [Nankai University](https://en.nankai.edu.cn/), under the supervision of [Prof. Ming-Ming Cheng](https://scholar.google.com/citations?user=huWpVyEAAAAJ). I am also an intern in Light Illusions, supervised by [Prof. Ping Tan](https://scholar.google.com/citations?user=XhyKVFMAAAAJ&hl=en&oi=ao). I received my B.E. degrees at the [Dalian University of Technology (DLUT)](https://www.dlut.edu.cn/) in 2021. My research interest includes computer vision and computer graphics.
 
  <!-- I have published more than 100 papers at the top international AI conferences with total <a href='https://scholar.google.com/citations?user=DhtAFkwAAAAJ'>google scholar citations <strong><span id='total_cit'>260000+</span></strong></a> (You can also use google scholar badge <a href='https://scholar.google.com/citations?user=DhtAFkwAAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a>). -->
 
