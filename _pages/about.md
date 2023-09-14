@@ -81,9 +81,8 @@ Hao Hou, Jun Xu, Yingkun Hou, **Xiaotao Hu**, Benzheng Wei, Dinggang Shen
 - *2021.09 - now*, Master student in Computer Science, Nankai University (NKU), Tianjin, China.
 - *2017.09 - 2021.06*, B.S. in Software Engineering (ranking 4%), Dalian University of Technology (DLUT), Dalian, China.
 
-<!-- # 💬 Invited Talks
-- *2021.06*, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
-- *2021.03*, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet.  \| [\[video\]](https://github.com/) -->
+# 💬 Invited Talks
+not yet
 
 # 💻 Internships
 - *2023.08 - now*, Light Illusions, China.
