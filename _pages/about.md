@@ -30,6 +30,21 @@ I am a master student of [TMCC](https://mmcheng.net/cmm/), College of Computer S
 
 <!-- ######################################################### -->
 
+<div class='paper-box'><div class='paper-box-image'><img src='collections/2023/Ctrl-Room.png' alt="sym" width="100%"></div>
+<div class='paper-box-text' markdown="1">
+
+**Ctrl-Room: Controllable Text-to-3D Room Meshes Generation with Layout Constraints**
+
+*arxiv, 2023*
+
+Chuan Fang, **Xiaotao Hu**, Kunming Luo, Ping Tan
+
+[Paper](collections/2023/Ctrl-Room.pdf) \| [Code (coming soon)] \| [Project](https://fangchuan.github.io/ctrl-room.github.io/) \| [BibTex](collections/2023/Ctrl-Room.md)
+</div>
+</div>
+
+<!-- ######################################################### -->
+
 <div class='paper-box'><div class='paper-box-image'><img src='collections/2023/dmvfn.png' alt="sym" width="100%"></div>
 <div class='paper-box-text' markdown="1">
 
