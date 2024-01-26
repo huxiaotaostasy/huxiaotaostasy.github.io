@@ -80,11 +80,11 @@ Hao Hou, Jun Xu, Yingkun Hou, **Xiaotao Hu**, Benzheng Wei, Dinggang Shen
 
 **Restore globally, refine locally: A mask-guided scheme to accelerate super-resolution networks**
 
-*European Conference on Computer Vision (**ECCV Oral**), 2023*
+*European Conference on Computer Vision (**ECCV Oral**), 2022*
 
 **Xiaotao Hu**, Jun Xu, Shuhang Gu, Ming-Ming Cheng, Li Liu
 
-[Paper](collections/2023/mga.pdf) \| [Code](https://github.com/huxiaotaostasy/MGA-scheme) \| [BibTex](collections/2023/mga.md)
+[Paper](collections/2022/mga.pdf) \| [Code](https://github.com/huxiaotaostasy/MGA-scheme) \| [BibTex](collections/2022/mga.md)
 </div>
 </div>
 # 🎖 Honors and Awards
