@@ -75,7 +75,7 @@ Hao Hou, Jun Xu, Yingkun Hou, **Xiaotao Hu**, Benzheng Wei, Dinggang Shen
 
 <!-- ######################################################### -->
 
-<div class='paper-box'><div class='paper-box-image'><img src='collections/2023/mga.png' alt="sym" width="100%"></div>
+<div class='paper-box'><div class='paper-box-image'><img src='collections/2022/mga.png' alt="sym" width="100%"></div>
 <div class='paper-box-text' markdown="1">
 
 **Restore globally, refine locally: A mask-guided scheme to accelerate super-resolution networks**
