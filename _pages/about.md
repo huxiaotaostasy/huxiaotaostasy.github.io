@@ -35,7 +35,7 @@ I am a master student of [TMCC](https://mmcheng.net/cmm/), College of Computer S
 
 **Scale-Adaptive Feature Aggregation for Efficient Space-Time Video Super-Resolution**
 
-*Proceedings of the IEEE/CVF Winter Conference on Applications of Computer Vision (**WACV**), 2024*
+*Winter Conference on Applications of Computer Vision (**WACV**), 2024*
 
 Zhewei Huang, Ailin Huang, **Xiaotao Hu**, Chen Hu, Jun Xu, Shuchang Zhou
 
