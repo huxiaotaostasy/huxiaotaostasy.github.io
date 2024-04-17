@@ -30,6 +30,21 @@ I am a master student of [TMCC](https://mmcheng.net/cmm/), College of Computer S
 
 <!-- ######################################################### -->
 
+<div class='paper-box'><div class='paper-box-image'><img src='collections/2023/SAFA.png' alt="sym" width="100%"></div>
+<div class='paper-box-text' markdown="1">
+
+**Scale-Adaptive Feature Aggregation for Efficient Space-Time Video Super-Resolution**
+
+*Proceedings of the IEEE/CVF Winter Conference on Applications of Computer Vision (**WACV**), 2024*
+
+Zhewei Huang, Ailin Huang, **Xiaotao Hu**, Chen Hu, Jun Xu, Shuchang Zhou
+
+[Paper](collections/2023/SAFA.pdf) \| [Code](https://github.com/hzwer/WACV2024-SAFA) \| [BibTex](collections/2023/SAFA.md)
+</div>
+</div>
+
+<!-- ######################################################### -->
+
 <div class='paper-box'><div class='paper-box-image'><img src='collections/2023/Ctrl-Room.png' alt="sym" width="100%"></div>
 <div class='paper-box-text' markdown="1">
 
