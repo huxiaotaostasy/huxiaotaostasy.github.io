@@ -109,7 +109,8 @@ Hao Hou, Jun Xu, Yingkun Hou, **Xiaotao Hu**, Benzheng Wei, Dinggang Shen
 - *2019.09*: &nbsp;The First Prize Scholarship, Dalian University of Technology.
 
 # 📖 Educations
-- *2021.09 - now*, Master student in Computer Science, Nankai University (NKU), Tianjin, China.
+- *2024.09 - now*, PhD student in Electronic & Computer Engineering, Hong Kong University of Science and Technology (HKUST), Hong Kong.
+- *2021.09 - 2024.06*, Master student in Computer Science, Nankai University (NKU), Tianjin, China.
 - *2017.09 - 2021.06*, B.S. in Software Engineering (ranking 4%), Dalian University of Technology (DLUT), Dalian, China.
 
 # 💬 Invited Talks
