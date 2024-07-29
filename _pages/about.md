@@ -110,7 +110,7 @@ Hao Hou, Jun Xu, Yingkun Hou, **Xiaotao Hu**, Benzheng Wei, Dinggang Shen
 
 # 📖 Educations
 - *2024.09 - now*, PhD student in Electronic & Computer Engineering, Hong Kong University of Science and Technology (HKUST), Hong Kong.
-- *2021.09 - 2024.06*, Master student in Computer Science, Nankai University (NKU), Tianjin, China.
+- *2021.09 - 2024.06*, M.S. in Computer Science, Nankai University (NKU), Tianjin, China.
 - *2017.09 - 2021.06*, B.S. in Software Engineering (ranking 4%), Dalian University of Technology (DLUT), Dalian, China.
 
 # 💬 Invited Talks
