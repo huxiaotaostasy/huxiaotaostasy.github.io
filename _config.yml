@@ -23,12 +23,12 @@ baidu_site_verification  :  # get baidu_site_verification from https://ziyuan.ba
 author:
   name             : "Xiaotao Hu"
   avatar           : "images/android-chrome-512x512.png"
-  bio              : "Nankai University"
-  location         : "Tianjin, China"
+  bio              : "Hong Kong University of Science and Technology"
+  location         : "Hong Kong"
   employer         :
   pubmed           : 
   googlescholar    : "https://scholar.google.com/citations?user=PRcnqk4AAAAJ"
-  email            : "1979005820hux@gmail.com"
+  email            : "xiaotao.hu@connect.ust.hk"
   researchgate     :  # e.g., "https://www.researchgate.net/profile/yourprofile"
   uri              :
   bitbucket        :
