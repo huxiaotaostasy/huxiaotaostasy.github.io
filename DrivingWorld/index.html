@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>DrivingWorld: Constructing World Model for Autonomous Driving via Video GPT</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">DrivingWorld: Constructing World Model for Autonomous Driving via Video GPT</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"></span>
+            <a href="https://huxiaotaostasy.github.io/">Xiaotao Hu</a><sup>1,2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://yvanyin.net/">Wei Yin</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=fcpTdvcAAAAJ&hl=zh-CN">Mingkai Jia</a><sup>1,2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=KTCPC5IAAAAJ&hl=en">Junyuan Deng</a><sup>1,2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://xy-guo.github.io/">Xiaoyang Guo</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://scholar.google.com.hk/citations?hl=zh-CN&user=pCY-bikAAAAJ">Qian Zhang</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://www.xxlong.site/">Xiaoxiao Long</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=XhyKVFMAAAAJ&hl=en">Ping Tan</a><sup>1</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>The Hong Kong University of Science and Technology,</span>
+            <span class="author-block"><sup>2</sup>Horizon Robotics</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://github.com/YvanYin/DrivingWorld"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered item-fullbody">
+      <img src="static/images/teaser.png" alt="" />
+    </div>
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Recent successes in autoregressive (AR) generation models, such as the GPT series in natural language processing, have motivated efforts to replicate this success in visual tasks. 
+            Some works attempt to extend this approach to autonomous driving by building video-based world models capable of generating realistic future video sequences and predicting ego states.
+            However, prior works tend to produce unsatisfactory results, as the classic GPT framework is designed to handle 1D contextual information, such as text, and lacks the inherent ability to model the spatial and temporal dynamics essential for video generation.
+            In this paper, we present DrivingWorld, a GPT-style world model for autonomous driving, featuring several spatial-temporal fusion mechanisms. This design enables effective modeling of both spatial and temporal dynamics, facilitating high-fidelity, long-duration video generation.
+            Specifically, we propose a next-state prediction strategy to model temporal coherence between consecutive frames and apply a next-token prediction strategy to capture spatial information within each frame. 
+            To further enhance generalization ability, we propose a novel masking strategy and reweighting strategy for token prediction to mitigate long-term drifting issues and enable precise control.
+            Our work demonstrates the ability to produce high-fidelity and consistent video clips of over 40 seconds in duration, which is over 2 times longer than state-of-the-art driving world models.
+            Experiments show that, in contrast to prior works, our method achieves superior visual quality and significantly more accurate controllable future video generation. Our code will be publicly available.
+
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <!-- <section class="hero is-light is-small"> -->
+  <div class="hero-body  is-max-desktop">
+    <div class="container has-text-centered">
+      <h2 class="title is-3">Pipeline</h2>
+      <div class="content has-text-justified">
+        <p>
+          The vehicle orientations, ego locations, and a front-view image sequence are taken as the conditional input, which are first tokenized as latent embeddings. Then our proposed multi-modal world model attempts to comprehend them and forecast the future states, which are detokenized to the vehicle orientation, location, and the front-view image. With the autoregressive process, we can generate over 40 seconds videos. 
+        </p>
+      </div>
+
+      <div class="columns is-centered item-fullbody">
+        <img src="static/images/pipeline.png" alt="" style="width: 80%; max-width: 1000px;" >
+    </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <!-- <section class="hero is-light is-small"> -->
+  <div class="hero-body  is-max-desktop">
+    <div class="container has-text-centered">
+      <h2 class="title is-3">Experiment 1: Long-term Generation</h2>
+      
+    <div class="content has-text-justified">
+      <p>In following examples, we present multiple different long-term generations. The longest one has over 600 frames. The ones with <b>white borders are condition frames</b>, and all the ones with <b>red borders are generated by the model</b>. All results are generated by the same model.</p>
+    </div>
+
+    <div class="columns is-centered mb-6" style="text-align: center;">
+      <body>
+        <video poster="" id="tree" autoplay controls muted loop width="700">
+          <source src="videos/long_term_1.mp4"
+          type="video/mp4">
+        </video>
+      </body>
+      </div>
+
+<div class="columns is-centered mb-6" style="text-align: center;">
+  <body>
+    <video style="margin-top: 10px;"  poster="" id="tree" autoplay controls muted loop width="700">
+      <source src="videos/long_term_4.mp4"
+      type="video/mp4">
+    </video>
+  </body>
+</div>
+
+
+<div class="columns is-centered mb-6" style="text-align: center;">
+  <body>
+    <video poster="" id="tree" autoplay controls muted loop width="700">
+      <source src="videos/long_term_2.mp4"
+      type="video/mp4">
+    </video>
+  </body>
+</div>
+
+
+<div class="columns is-centered mb-6" style="text-align: center;">
+<body>
+  <video poster="" id="tree" autoplay controls muted loop width="700">
+    <source src="videos/long_term_3.mp4"
+    type="video/mp4">
+  </video>
+</body>
+</div>
+</div>
+
+</section>
+
+<section class="section">
+  <!-- <section class="hero is-light is-small"> -->
+  <div class="hero-body  is-max-desktop">
+    <div class="container has-text-centered">
+        <h2 class="title is-3">Experiment 2: Controllable Generation</h2>
+
+      <div class="content has-text-justified">
+      <p>In following examples, we designed multiple trajectories for the ego car, which can generate different driving scenarios. The ones with <b>white borders are condition frames</b>, and all the ones with <b>red borders are generated by the model</b>. All results are generated by the same model. The "x2" in the bottom right corner of the video indicates that the video has been processed at 2x speed.</p>
+  </div>
+
+    <div class="columns is-centered mb-6" style="text-align: center;">
+        <body>
+          <video style="padding-top: 50px;" poster="" id="tree" autoplay controls muted loop width="700">
+            <source src="videos/only_turn_left_trajectory.mp4"
+            type="video/mp4">
+          </video>
+        </body>
+    </div>
+
+    <h2 class="subtitle" style="margin-top: -30px; margin-bottom: 80px; font-size: smaller; text-align: center;">
+      <p>Example 1: The car is designed to drive in a curved path, straight foward first, and then turning left to the left lane.</p>
+    </h2>
+
+    <div class="columns is-centered mb-6" style="text-align: center;">
+      <body>
+        <video poster="" id="tree" autoplay controls muted loop width="700">
+          <source src="videos/only_turn_right_trajectory.mp4"
+          type="video/mp4">
+        </video>
+      </body>
+  </div>
+  
+  <h2 class="subtitle" style="margin-top: -30px; margin-bottom: 80px; font-size: smaller; text-align: center;">
+    <p>Example 2: The car is designed to drive in a curved path, straight foward first, and then turning right to the right lane.</p>
+  </h2>
+
+  <div class="columns is-centered mb-6" style="text-align: center;">
+    <body>
+      <video poster="" id="tree" autoplay controls muted loop width="700">
+        <source src="videos/only_turn_left_and_left_trajectory.mp4"
+        type="video/mp4">
+      </video>
+    </body>
+</div>
+
+<h2 class="subtitle" style="margin-top: -30px; margin-bottom: 80px; font-size: smaller; text-align: center;">
+  <p>Example 3: The car is designed to drive in a curved path, turning left twice to its left lane.</p>
+</h2>
+
+<div class="columns is-centered mb-6" style="text-align: center;">
+  <body>
+    <video poster="" id="tree" autoplay controls muted loop width="700">
+      <source src="videos/only_turn_left_right_trajectory.mp4"
+      type="video/mp4">
+    </video>
+  </body>
+</div>
+
+<h2 class="subtitle" style="margin-top: -30px; margin-bottom: 80px; font-size: smaller; text-align: center;">
+<p>Example 4: The car is designed to drive in a curved path, turning left first and then turning right.</p>
+</h2>
+
+<div class="columns is-centered mb-6" style="text-align: center;">
+  <body>
+    <video poster="" id="tree" autoplay controls muted loop width="700">
+      <source src="videos/only_turn_right_left_trajectory.mp4"
+      type="video/mp4">
+    </video>
+  </body>
+</div>
+
+<h2 class="subtitle" style="margin-top: -30px; margin-bottom: 80px; font-size: smaller; text-align: center;">
+<p>Example 5: The car is designed to drive in a curved path, turning right to the right lane and then turning left to the original lane.</p>
+</h2>
+
+
+
+<div class="columns is-centered mb-6" style="text-align: center;">
+  <body>
+    <video poster="" id="tree" autoplay controls muted loop width="700">
+      <source src="videos/721_with_trajectory.mp4"
+      type="video/mp4">
+    </video>
+  </body>
+</div>
+
+<h2 class="subtitle" style="margin-top: -30px; margin-bottom: 80px; font-size: smaller; text-align: center;">
+<p>Example 6: The car is designed to drive in a curved path, straight foward first, and then making a U-turn.</p>
+</h2>
+
+  <div class="columns is-centered mb-6" style="text-align: center;">
+    <body>
+      <video poster="" id="tree" autoplay controls muted loop width="700">
+        <source src="videos/1_with_trajectory_x2.mp4"
+        type="video/mp4">
+      </video>
+    </body>
+  </div>
+  
+  <h2 class="subtitle" style="margin-top: -30px; margin-bottom: 80px; font-size: smaller; text-align: center;">
+  <p>Example 7: The car is designed to drive in a curved path, slowing turning left.</p>
+  </h2>
+  
+
+  <div class="columns is-centered mb-6" style="text-align: center;">
+    <body>
+      <video poster="" id="tree" autoplay controls muted loop width="700">
+        <source src="videos/6_with_trajectory_x2.mp4"
+        type="video/mp4">
+      </video>
+    </body>
+  </div>
+  
+  <h2 class="subtitle" style="margin-top: -30px; margin-bottom: 80px; font-size: smaller; text-align: center;">
+  <p>Example 8: The car is designed to drive in a curved path, slowing turning left.</p>
+  </h2>
+  
+
+  <div class="columns is-centered mb-6" style="text-align: center;">
+    <body>
+      <video poster="" id="tree" autoplay controls muted loop width="700">
+        <source src="videos/22_with_trajectory_x2.mp4"
+        type="video/mp4">
+      </video>
+    </body>
+  </div>
+  
+  <h2 class="subtitle" style="margin-top: -30px; margin-bottom: 80px; font-size: smaller; text-align: center;">
+  <p>Example 9: The car is designed to drive in a curved path, turning right.</p>
+  </h2>
+  
+  <div class="columns is-centered mb-6" style="text-align: center;">
+    <body>
+      <video poster="" id="tree" autoplay controls muted loop width="700">
+        <source src="videos/83_with_trajectory_x2.mp4"
+        type="video/mp4">
+      </video>
+    </body>
+  </div>
+  
+  <h2 class="subtitle" style="margin-top: -30px; margin-bottom: 80px; font-size: smaller; text-align: center;">
+  <p>Example 10: The car is designed to drive in a curved path, turning right.</p>
+  </h2>
+  
+  <div class="columns is-centered mb-6" style="text-align: center;">
+    <body>
+      <video poster="" id="tree" autoplay controls muted loop width="700">
+        <source src="videos/84_with_trajectory_x2.mp4"
+        type="video/mp4">
+      </video>
+    </body>
+  </div>
+  
+  <h2 class="subtitle" style="margin-top: -30px; margin-bottom: 80px; font-size: smaller; text-align: center;">
+  <p>Example 11: The car is designed to drive in a curved path, turning right.</p>
+  </h2>
+</div>
+</section>
+
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{hu2024drivingworld,
+  author    = {Hu, Xiaotao and Yin, Wei and Jia, Mingkai and Deng, Junyuan and Guo, Xiaoyang and Zhang, Qian and Long, Xiaoxiao and Tan, Ping},
+  title     = {DrivingWorld: Constructing World Model for Autonomous Driving via Video GPT},
+  year      = {2024},
+}</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
