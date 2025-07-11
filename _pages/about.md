@@ -33,7 +33,7 @@ I am currently a second-year PhD student in the 3DVLab at the [Hong Kong Univers
 
 <!-- ######################################################### -->
 
-<div class='paper-box'><div class='paper-box-image'><img src='collections/2025/epona.png' alt="sym" width="100%"></div>
+<div class='paper-box'><div class='paper-box-image'><img src='collections/2025/drivingworld.png' alt="sym" width="100%"></div>
 <div class='paper-box-text' markdown="1">
 
 **DrivingWorld: Constructing World Model for Autonomous Driving via Video GPT**
