@@ -48,6 +48,21 @@ arxiv, 2024
 
 <!-- ######################################################### -->
 
+<div class='paper-box'><div class='paper-box-image'><img src='collections/2025/mgvq.png' alt="sym" width="100%"></div>
+<div class='paper-box-text' markdown="1">
+
+**MGVQ: Could VQ-VAE Beat VAE? A Generalizable Tokenizer with Multi-group Quantization**
+
+arxiv, 2025
+
+Mingkai Jia, Wei Yin, **Xiaotao Hu**, Jiaxin Guo, Xiaoyang Guo, Qian Zhang, Xiao-Xiao Long, Ping Tan
+
+[Paper](https://arxiv.org/abs/2507.07997)
+</div>
+</div>
+
+<!-- ######################################################### -->
+
 <div class='paper-box'><div class='paper-box-image'><img src='collections/2025/epona.png' alt="sym" width="100%"></div>
 <div class='paper-box-text' markdown="1">
 
